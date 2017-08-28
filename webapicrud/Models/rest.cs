@@ -7,7 +7,7 @@ namespace webapicrud.Models
 {
     public class rest
     {
-
+        /* this comment for testing with GIT*/
         public int id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
@@ -21,6 +21,8 @@ namespace webapicrud.Models
 
 
         //public string PhoneNumber { get; set; }
+
+
 
 
 
