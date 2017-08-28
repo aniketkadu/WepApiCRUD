@@ -1,0 +1,45 @@
+﻿@model IEnumerable<webapicrud.Models.rest>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    <h2>Data</h2>
+
+    <table id="student" class="table table-responsive table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Action</th>
+               
+            </tr>
+        </thead>
+    </table>
+
+</div>
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+    var uri = "http://localhost:50767/api/Home";
+            $(document).ready(function () {
+                $.getJSON(uri)
+                .done(function (data) {
+                    $.each(data, function (key, item) {
+                        $('#student').append("<tr><td>" + item.Name + "</td>" + "<td>" + item.Email + "<td>" + "<a href>edit |</a>"  +  "<a href> Delete</a>" + "</td></tr>");
+
+
+                    });
+                });
+            });
+
+    </script>
+
+
+@{ Html.RenderPartial("Create");}
